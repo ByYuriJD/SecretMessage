@@ -1,19 +1,24 @@
 
-plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    kotlin("plugin.serialization") version "2.0.21"
-    id("androidx.navigation.safeargs.kotlin")
-}
 buildscript {
     repositories {
         google()
     }
     dependencies {
-        val nav_version = "2.8.4"
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
+        val nav_version = "2.8.5"
+//        classpath("android.arch.navigation:navigation-safe-args-gradle-plugin:2.4.2-alpha09")
+    }
+    plugins{
+
+//        id("androidx.navigation.safeargs")
     }
 }
+
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") version "2.0.21"
+}
+
 android {
     namespace = "com.hfad.secretmessage"
     compileSdk = 34
@@ -47,7 +52,6 @@ android {
 }
 
 dependencies {
-    val nav_version = "2.8.4"
 
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
@@ -79,5 +83,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 }
