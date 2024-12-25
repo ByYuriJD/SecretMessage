@@ -1,21 +1,9 @@
 
-buildscript {
-    repositories {
-        google()
-    }
-    dependencies {
-        val nav_version = "2.8.5"
-//        classpath("android.arch.navigation:navigation-safe-args-gradle-plugin:2.4.2-alpha09")
-    }
-    plugins{
-
-//        id("androidx.navigation.safeargs")
-    }
-}
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safeargs.kotlin)
+
     kotlin("plugin.serialization") version "2.0.21"
 }
 
